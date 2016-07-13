@@ -37,8 +37,7 @@ public class Recognizer
         {
             for(int j=0; j< values.GetLength(1); j++)
             {
-                result[i, j, 0] = Math.Atan(values[i, j, 7] / values[i, j, 8]);
-
+                result[i, j, 0] = Math.Atan2(values[i, j, 7] , values[i, j, 8]);
             }
         }
 
@@ -63,7 +62,7 @@ public class Recognizer
                 }
                 else
                 {
-                    if (values[0, i, 0] >= 3.7 && values[0, i, 0] < 7)
+                    if (values[0, i, 0] >= 3.7 && values[0, i, 0] < 7.2)
                     {
                         result[i] = 2;//Sit
                     }
